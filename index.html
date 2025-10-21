@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Weatherly</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="logo">Weatherly</div>
+  <div class="menu-icon" onclick="toggleMenu()"><div></div><div></div><div></div></div>
+  <div class="nav-links" id="navLinks">
+    <a class="active" href="#" onclick="showSection('current')">Current</a>
+    <a href="#" onclick="showSection('daily')">7 Day Forecast</a>
+    <a href="#" onclick="showSection('hourly')">Hourly</a>
+    <a href="#" onclick="showSection('map')">Map</a>
+    <a href="#" onclick="showSection('air')">Air Quality</a>
+  </div>
+</nav>
+
+<div class="app-container">
+  <h1>Weatherly</h1>
+  <div class="city-input-bar">
+    <input type="text" placeholder="Enter city" id="city" />
+    <button id="get-btn" onclick="getWeather()">Get Weather</button>
+  </div>
+  <div id="error-msg"></div>
+
+  <div class="cards-container" id="current-cards">
+    <div class="weather-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/728/728093.png" class="weather-icon" alt="Humidity"/>
+      <div class="label">Humidity</div>
+      <div class="value" id="humidity">--</div>
+    </div>
+    <div class="weather-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" class="weather-icon" alt="Temperature"/>
+      <div class="label">Temperature</div>
+      <div class="value" id="Temperature">--</div>
+    </div>
+    <div class="weather-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/2939/2939590.png" class="weather-icon" alt="Pressure"/>
+      <div class="label">Pressure</div>
+      <div class="value" id="Pressure">--</div>
+    </div>
+    <div class="weather-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/1197/1197102.png" class="weather-icon" alt="Wind"/>
+      <div class="label">Wind Speed</div>
+      <div class="value" id="Wind">--</div>
+    </div>
+  </div>
+
+  <div id="current" class="section"></div>
+  <div id="daily" class="section"></div>
+  <div id="hourly" class="section"></div>
+  <div id="map" class="section"><iframe id="weather-map" src="" frameborder="0"></iframe></div>
+  <div id="air" class="section"><div id="air-qual">--</div></div>
+
+  <div id="sun-times">
+    <div><strong>Sunrise:</strong> --</div>
+    <div><strong>Sunset:</strong> --</div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
